@@ -1,35 +1,66 @@
 <script>
+  import { onMount } from 'svelte';
   import logo from './assets/logo.png';
   import fondo from './assets/fondo.jpg';
   import QuienesSomos from './lib/QuienesSomos.svelte';
+  import QueHacemos from './lib/QueHacemos.svelte';
+  import Camaras from './lib/Camaras.svelte';
+  import Contacto from './lib/Contacto.svelte';
+
   let showMenu = false;
+  let currentPage = null;
+  let currentRoute = '';
+
+
+  const routes = {
+    'quienessomos': QuienesSomos,
+    'quehacemos': QueHacemos,
+    'camaras': Camaras,
+    'contacto': Contacto,
+  };
 
   function toggleMenu() {
     showMenu = !showMenu;
   }
 
+  function navigate(route) {
+    currentRoute = route;
+    currentPage = routes[route];
+    // toggleMenu(); // No cierres el menú al cambiar de página si deseas mantenerlo abierto
+  }
+
+  onMount(() => {
+    const initialRoute = window.location.pathname.replace('/', ''); // Obtén la ruta inicial
+    navigate(initialRoute || 'quienessomos'); // Navega a la ruta inicial o 'quienessomos'
+  });
 </script>
 
 <main style="background-image: url('{fondo}');">
   <img src={logo} alt="logo" class="logo" />
-  
+
   <div class="menu-icon" on:click={toggleMenu}>
-    ☰ 
+    ☰
   </div>
 
   {#if showMenu}
     <div class="overlay" on:click={toggleMenu}>
       <div class="menu" on:click={(e) => e.stopPropagation()}>
         <ul>
-          <li><a href="quienessomos">Quiénes Somos</a></li>
-          <li><a href="#">Qué Hacemos</a></li>
-          <li><a href="#">Cámaras</a></li>
-          <li><a href="#">Contacto</a></li>
+          {#each Object.keys(routes) as route}
+            <li><a href={route} on:click={() => navigate(route)}>{route}</a></li>
+          {/each}
         </ul>
       </div>
     </div>
   {/if}
-  
+
+  {#if currentRoute === 'quienessomos' && window.location.pathname === '/quienessomos'}
+    <QuienesSomos />
+  {:else}
+    {#if currentPage}
+      <svelte:component this={currentPage} />
+    {/if}
+  {/if}
 </main>
 
 <style>
@@ -55,7 +86,7 @@
     cursor: pointer;
     z-index: 1;
     color: white;
-    font-size: 24px; /* Tamaño del icono */
+    font-size: 24px;
   }
 
   .overlay {
@@ -67,9 +98,9 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
     display: flex;
-    align-items: flex-start; /* Alinea el menú desde arriba */
-    justify-content: flex-end; /* Alinea el menú desde la izquierda si está abierto */
-    overflow: hidden; /* Oculta el desbordamiento del menú cerrado */
+    align-items: flex-start;
+    justify-content: flex-end;
+    overflow: hidden;
   }
 
   .menu {
@@ -88,12 +119,13 @@
   }
 
   li {
-    margin-bottom: 15px; /* Ajusta el espacio entre las opciones */
+    margin-bottom: 15px;
   }
 
   a {
     text-decoration: none;
     color: white;
     font-size: 16px;
+    cursor: pointer;
   }
 </style>
