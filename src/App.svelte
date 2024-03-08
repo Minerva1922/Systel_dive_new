@@ -36,7 +36,7 @@
 </script>
 
 <main style="background-image: url('{fondo}');">
-  <img src={logo} alt="logo" class="logo" />
+  <img src={logo} alt="logo" class="logo" on:click={() => navigate('/')} />
 
   <div class="menu-icon" on:click={toggleMenu}>
     ☰
