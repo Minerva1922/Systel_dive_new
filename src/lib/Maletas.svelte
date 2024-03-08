@@ -1,5 +1,5 @@
 
-{#if window.location.pathname === '/contacto'}
+{#if window.location.pathname === '/maletas'}
   <main>
     <h1>Contacto</h1>
   </main>

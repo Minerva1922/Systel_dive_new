@@ -1,5 +1,5 @@
 
-{#if window.location.pathname === '/quehacemos'}
+{#if window.location.pathname === '/queha cemos'}
   <main>
     <h1>Que hacemos</h1>
     <!-- Otro contenido específico de Quienes Somos si es necesario -->

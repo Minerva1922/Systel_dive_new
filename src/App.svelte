@@ -5,7 +5,7 @@
   import QuienesSomos from './lib/QuienesSomos.svelte';
   import QueHacemos from './lib/QueHacemos.svelte';
   import Camaras from './lib/Camaras.svelte';
-  import Contacto from './lib/Contacto.svelte';
+  import Maletas from './lib/Maletas.svelte';
 
   let showMenu = false;
   let currentPage = null;
@@ -13,10 +13,10 @@
 
 
   const routes = {
-    'quienessomos': QuienesSomos,
-    'quehacemos': QueHacemos,
-    'camaras': Camaras,
-    'contacto': Contacto,
+    'Quienes somos': QuienesSomos,
+    'Que hacemos': QueHacemos,
+    'Camaras': Camaras,
+    'Maletas': Maletas,
   };
 
   function toggleMenu() {

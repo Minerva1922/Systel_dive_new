@@ -1,6 +1,6 @@
 <!-- QuienesSomos.svelte -->
 
-{#if window.location.pathname === '/quienessomos'}
+{#if window.location.pathname === '/quienes somos'}
   <main>
     <h1>Quiénes Somos</h1>
     <!-- Otro contenido específico de Quienes Somos si es necesario -->
