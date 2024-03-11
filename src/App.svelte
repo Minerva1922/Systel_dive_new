@@ -1,4 +1,7 @@
 <script>
+// @ts-nocheck
+
+  import { Router, Route } from 'svelte-routing';
   import { onMount } from 'svelte';
   import logo from './assets/logo.png';
   import fondo from './assets/fondo.jpg';
@@ -8,60 +11,67 @@
   import Maletas from './lib/Maletas.svelte';
 
   let showMenu = false;
-  let currentPage = null;
   let currentRoute = '';
 
-
+  // Definir las rutas y sus componentes asociados
   const routes = {
-    'Quienes somos': QuienesSomos,
-    'Que hacemos': QueHacemos,
-    'Camaras': Camaras,
-    'Maletas': Maletas,
+    'quienes-somos': QuienesSomos,
+    'que-hacemos': QueHacemos,
+    'camaras': Camaras,
+    'maletas': Maletas,
   };
 
+  // Función para alternar la visibilidad del menú
   function toggleMenu() {
     showMenu = !showMenu;
   }
 
+  // Función para manejar la navegación
   function navigate(route) {
     currentRoute = route;
-    currentPage = routes[route];
-    // toggleMenu(); // No cierres el menú al cambiar de página si deseas mantenerlo abierto
   }
 
   onMount(() => {
-    const initialRoute = window.location.pathname.replace('/', ''); // Obtén la ruta inicial
-    navigate(initialRoute || 'quienessomos'); // Navega a la ruta inicial o 'quienessomos'
+    // Obtener la ruta inicial
+    const initialRoute = window.location.pathname || '/';
+    navigate(initialRoute); // Navegar a la ruta inicial
   });
 </script>
 
-<main style="background-image: url('{fondo}');">
+<main style="background-image: url('{fondo}')">
+  <!-- Encabezado -->
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <img src={logo} alt="logo" class="logo" on:click={() => navigate('/')} />
 
+  <!-- Icono del menú -->
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div class="menu-icon" on:click={toggleMenu}>
     ☰
   </div>
 
+  <!-- Menú desplegable -->
   {#if showMenu}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="overlay" on:click={toggleMenu}>
-      <div class="menu" on:click={(e) => e.stopPropagation()}>
+      <div class="menu {showMenu ? 'open' : ''}" on:click={(e) => e.stopPropagation()}>
         <ul>
           {#each Object.keys(routes) as route}
-            <li><a href={route} on:click={() => navigate(route)}>{route}</a></li>
+            <li><a href="{route}" on:click={() => navigate(route)}>{route}</a></li>
           {/each}
         </ul>
       </div>
     </div>
+    
   {/if}
 
-  {#if currentRoute === 'quienessomos' && window.location.pathname === '/quienessomos'}
-    <QuienesSomos />
-  {:else}
-    {#if currentPage}
-      <svelte:component this={currentPage} />
-    {/if}
-  {/if}
+  <!-- Router para manejar las rutas y renderizar los componentes correspondientes -->
+  <Router>
+    {#each Object.keys(routes) as route}
+      <Route path={route} component={routes[route]} />
+    {/each}
+  </Router>
 </main>
+
 
 <style>
   main {
@@ -74,8 +84,8 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 50px;
-    height: 60px;
+    width: 90px;
+    height: 20%;
     z-index: 1;
   }
 
@@ -99,7 +109,7 @@
     z-index: 2;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     overflow: hidden;
   }
 
@@ -110,6 +120,13 @@
     padding: 20px;
     color: white;
     text-align: center;
+    position: relative; /* Añade esta línea */
+    left: -100%; /* Añade esta línea */
+  }
+
+  .menu.open {
+    left: 0; /* Añade esta línea */
+    transition: left 0.3s ease; /* Añade esta línea */
   }
 
   ul {

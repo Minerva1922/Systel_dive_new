@@ -1,13 +1,12 @@
 
-{#if window.location.pathname === '/camaras'}
+
   <main>
     <h1>Camaras</h1>
   </main>
-{/if}
 
 <style>
   main {
-    padding: 20px;
+    padding: 60px;
   }
 
   h1 {
