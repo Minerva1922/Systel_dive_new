@@ -8,7 +8,7 @@
   import QuienesSomos from './lib/QuienesSomos.svelte';
   import QueHacemos from './lib/QueHacemos.svelte';
   import Camaras from './lib/Camaras.svelte';
-  import Maletas from './lib/Maletas.svelte';
+  import EquipoCctv from './lib/EquipoCctv.svelte';
 
   let showMenu = false;
   let currentRoute = '';
@@ -18,7 +18,7 @@
     'quienes-somos': QuienesSomos,
     'que-hacemos': QueHacemos,
     'camaras': Camaras,
-    'maletas': Maletas,
+    'equipo-cctv': EquipoCctv,
   };
 
   // Función para alternar la visibilidad del menú
@@ -84,9 +84,9 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 90px;
     height: 20%;
     z-index: 1;
+
   }
 
   .menu-icon {
@@ -97,6 +97,7 @@
     z-index: 1;
     color: white;
     font-size: 24px;
+  
   }
 
   .overlay {
