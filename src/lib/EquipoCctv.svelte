@@ -1,38 +1,113 @@
+<script>
+  import maleta from '../assets/img_maleta.png'
+</script>
 
+<main>
+  <!-- Descripción del producto -->
+  <h1>CCTV FULL HD</h1>
+  <p>Cctv Equipo video de buceo 2, 3 o 4 buzos. Equipo robusto, compacto y de fácil manejo. Pensado y diseñado por buceadores que conocen las necesidades y las complicaciones del buceo comercial.</p>
 
-  <main>
-    <h1>CCTV FULL HD</h1>
+  <!-- Imagen de la maleta con características -->
+  <div class="maleta-container">
+    <img src={maleta} alt="maleta" class="maleta" title="Características principales:
+    - Transmisión de larga distancia
+    - Sistema operativo potente
+    - Mejora de visión en agua sucia
+    - Dual Cam
+    - Dual monitor
+    - Compatibilidad y adaptabilidad
+    - Opciones de alimentación flexibles
+    - Opcional batería interna de emergencia
+    - Tamaño personalizable" />
+    <div class="caracteristicas">
+      <h2>Características:</h2>
+      <ul>
+        <li><strong>Transmisión de larga distancia:</strong> Capacidad de transmitir datos hasta una profundidad de 1000 metros, lo que permite a los buceadores explorar áreas remotas sin perder la conexión.</li>
+        <li><strong>Sistema operativo potente:</strong> Equipado con un sistema operativo potente que permite gestionar cámaras de hasta 8 megapíxeles, ofreciendo una calidad superior de imagen y un zoom sin pixelar la imagen. Además, el sistema mejora digitalmente la imagen para obtener resultados óptimos incluso en condiciones de visibilidad reducida o agua sucia.</li>
+        <li><strong>Mejora de visión en agua sucia:</strong> Tecnología avanzada que mejora la visión en agua sucia, proporcionando una experiencia visual clara y nítida para los buceadores.</li>
+        <li><strong>Dual Cam:</strong> Función dual cam que permite alternar entre una cámara montada en el casco (helmet cam) y una cámara de mano (hand cam), brindando flexibilidad para capturar diferentes ángulos y perspectivas bajo el agua.</li>
+        <li><strong>Dual monitor:</strong> Sistema equipado con dual monitor que permite a los buceadores ver diferentes canales en monitores separados, con opciones de conexión VGA y HDMI para una mayor versatilidad.</li>
+        <li><strong>Compatibilidad y adaptabilidad:</strong> Totalmente adaptable a todos los umbilicales y con conectores personalizables para satisfacer las necesidades específicas de cada buceador.</li>
+        <li><strong>Opciones de alimentación flexibles:</strong> Puede ser alimentado por una batería externa de 12V o mediante una fuente de alimentación AC-DC de 100/220V, lo que garantiza un rendimiento óptimo en cualquier entorno submarino.</li>
+        <li><strong>Opcional batería interna de emergencia:</strong> Disponible una opción de batería interna de emergencia para proporcionar energía adicional en situaciones críticas.</li>
+        <li><strong>Tamaño personalizable:</strong> Diseño adaptable y personalizable para satisfacer las necesidades específicas de los buceadores, proporcionando comodidad y funcionalidad en cada inmersión.</li>
+      </ul>
+    </div>
+  </div>
 
-  <p>
-    Cctv Equipo video de buceo 2, 3 o 4 buzos
-  </p>
+  <!-- Conclusión -->
+  <h2>Conclusion:</h2>
+  <p>Con estas características innovadoras, este sistema tecnológico ofrece una solución integral para mejorar la experiencia de buceo, permitiendo a los usuarios capturar imágenes de alta calidad, transmitir datos de manera eficiente y disfrutar de una visualización clara y nítida bajo el agua.</p>
+</main>
 
-  <p>
-    Equipo robusto, compacto y de faácil manejo. Pensado y diseñado por buceadores que conocen las necesidades y las complicaciones del buceo comercial.
-  </p>
+<style>
+  main {
+    padding: 60px;
+    text-align-last: auto;
+  }
 
-  <p>
-    Compacto. Todo en una maleta de 5,5 Kg con un monitor de 13'3 pulgadas insertado en un panel de inox cortado a laser. En su interior alberga un potente capturador de video, doble fuente alimentación y disco duro solido especial para captura.
-  </p>
+  h1 {
+    font-size: 24px;
+    color: #FFFBFB; 
+  }
 
-  <p>Facil manejo. Un solo botón arranca el sistema.</p>
-  </main>
+  h2 {
+    color: black
+  }
 
-  <style>
-    main {
-      padding: 60px;
-      text-align: justify;
-    }
-  
-    h1 {
-      font-size: 24px;
-      color: #FFFBFB; 
-    }
-  
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #FFFFFF; 
-      margin-bottom: 20px; 
-    }
-  </style>
+  h3 {
+    color:rgb(3, 14, 105)
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #FFFFFF; 
+    margin-bottom: 10px; 
+  }
+
+  /* Estilos para la maleta */
+  .maleta-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px; /* Espacio entre la descripción y la imagen */
+  }
+
+  .maleta {
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    cursor: pointer;
+  }
+
+  .maleta:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: calc(100% + 10px); /* Posiciona el texto debajo de la imagen */
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: pre-line; /* Permite mostrar saltos de línea */
+  }
+
+  .caracteristicas {
+    display: none; /* Oculta inicialmente las características */
+    position: absolute;
+    top: calc(100% + 10px); /* Posiciona las características debajo de la imagen */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    white-space: pre-line; /* Permite mostrar saltos de línea */
+  }
+
+  .maleta-container:hover .caracteristicas {
+    display: block; /* Muestra las características al pasar el ratón sobre la maleta */
+  }
+</style>
