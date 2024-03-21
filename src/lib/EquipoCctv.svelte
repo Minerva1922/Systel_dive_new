@@ -5,7 +5,7 @@
 <main>
   <!-- Descripción del producto -->
   <h1>CCTV FULL HD</h1>
-  <p>Cctv Equipo video de buceo 2, 3 o 4 buzos. Equipo robusto, compacto y de fácil manejo. Pensado y diseñado por buceadores que conocen las necesidades y las complicaciones del buceo comercial.</p>
+  <p>Cctv Equipo video de buceo 2, 3 o 4 buzos. <br>Equipo robusto, compacto y de fácil manejo.<br> Pensado y diseñado por buceadores que conocen las necesidades y las complicaciones del buceo comercial.</p>
 
   <!-- Imagen de la maleta con características -->
   <div class="maleta-container">
@@ -20,7 +20,7 @@
     - Opcional batería interna de emergencia
     - Tamaño personalizable" />
     <div class="caracteristicas">
-      <h2>Características:</h2>
+      <h2>Características</h2>
       <ul>
         <li><strong>Transmisión de larga distancia:</strong> Capacidad de transmitir datos hasta una profundidad de 1000 metros, lo que permite a los buceadores explorar áreas remotas sin perder la conexión.</li>
         <li><strong>Sistema operativo potente:</strong> Equipado con un sistema operativo potente que permite gestionar cámaras de hasta 8 megapíxeles, ofreciendo una calidad superior de imagen y un zoom sin pixelar la imagen. Además, el sistema mejora digitalmente la imagen para obtener resultados óptimos incluso en condiciones de visibilidad reducida o agua sucia.</li>
@@ -35,13 +35,12 @@
     </div>
   </div>
 
-  <!-- Conclusión -->
-  <h2>Conclusion:</h2>
-  <p>Con estas características innovadoras, este sistema tecnológico ofrece una solución integral para mejorar la experiencia de buceo, permitiendo a los usuarios capturar imágenes de alta calidad, transmitir datos de manera eficiente y disfrutar de una visualización clara y nítida bajo el agua.</p>
+  <h2>Con estas características innovadoras, este sistema tecnológico ofrece una solución integral para mejorar la experiencia de buceo, <br>permitiendo a los usuarios capturar imágenes de alta calidad, transmitir datos de manera eficiente y disfrutar de una visualización clara y nítida bajo el agua.</h2>
 </main>
 
 <style>
   main {
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 60px;
     text-align-last: auto;
   }
@@ -52,7 +51,8 @@
   }
 
   h2 {
-    color: black
+    align-items: center;
+    color: #FFFBFB;
   }
 
   h3 {
@@ -74,7 +74,7 @@
   }
 
   .maleta {
-    width: 200px; /* Ajusta el tamaño según sea necesario */
+    width: 350px; /* Ajusta el tamaño según sea necesario */
     height: auto;
     cursor: pointer;
   }
@@ -85,6 +85,7 @@
     top: calc(100% + 10px); /* Posiciona el texto debajo de la imagen */
     left: 0;
     width: 100%;
+    height: 100%¡;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
@@ -93,21 +94,25 @@
     white-space: pre-line; /* Permite mostrar saltos de línea */
   }
 
-  .caracteristicas {
+  /* .caracteristicas {
     display: none; /* Oculta inicialmente las características */
-    position: absolute;
+    /* position: absolute;
     top: calc(100% + 10px); /* Posiciona las características debajo de la imagen */
-    left: 0;
+    /* left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     font-size: 14px;
     font-weight: bold;
-    padding: 10px;
-    white-space: pre-line; /* Permite mostrar saltos de línea */
-  }
+    padding: 10px; */ 
+    /* white-space: pre-line; /* Permite mostrar saltos de línea */
+  
 
   .maleta-container:hover .caracteristicas {
     display: block; /* Muestra las características al pasar el ratón sobre la maleta */
+  }
+
+  ul {
+    list-style-type: none;
   }
 </style>
