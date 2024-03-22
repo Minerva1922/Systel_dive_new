@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
 
   import { Router, Route } from 'svelte-routing';
   import { onMount } from 'svelte';
@@ -9,16 +9,17 @@
   import QueHacemos from './lib/QueHacemos.svelte';
   import Camaras from './lib/Camaras.svelte';
   import EquipoCctv from './lib/EquipoCctv.svelte';
+  import Mail from './assets/email.ico'
 
   let showMenu = false;
   let currentRoute = '';
 
   // Definir las rutas y sus componentes asociados
   const routes = {
-    'quienes-somos': QuienesSomos,
-    'que-hacemos': QueHacemos,
-    'camaras': Camaras,
-    'equipo-cctv': EquipoCctv,
+    'Quienes-somos': QuienesSomos,
+    'Que-hacemos': QueHacemos,
+    'Camaras': Camaras,
+    'Equipo-cctv': EquipoCctv,
   };
 
   // Función para alternar la visibilidad del menú
@@ -36,8 +37,8 @@
     const initialRoute = window.location.pathname || '/';
     navigate(initialRoute); // Navegar a la ruta inicial
   });
-</script>
 
+  </script>
 <main style="background-image: url('{fondo}')">
   <!-- Encabezado -->
   <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -59,9 +60,11 @@
             <li><a href="{route}" on:click={() => navigate(route)}>{route}</a></li>
           {/each}
         </ul>
+        <!-- Agrega el icono de correo -->
+        <img src={Mail} alt="Correo" class="mail" />
+
       </div>
     </div>
-    
   {/if}
 
   <!-- Router para manejar las rutas y renderizar los componentes correspondientes -->
@@ -71,7 +74,6 @@
     {/each}
   </Router>
 </main>
-
 
 <style>
   main {
@@ -84,9 +86,8 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    height: 20%;
+    height: 15%;
     z-index: 1;
-
   }
 
   .menu-icon {
@@ -97,7 +98,6 @@
     z-index: 1;
     color: white;
     font-size: 24px;
-  
   }
 
   .overlay {
@@ -109,7 +109,6 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
     display: flex;
-    align-items: flex-start;
     justify-content: flex-start;
     overflow: hidden;
   }
@@ -118,16 +117,16 @@
     width: 15%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    padding: 10px;
     color: white;
-    text-align: center;
-    position: relative; /* Añade esta línea */
-    left: -100%; /* Añade esta línea */
+    text-align: end;
+    position: relative; 
+    left: -100%; 
   }
 
   .menu.open {
-    left: 0; /* Añade esta línea */
-    transition: left 0.3s ease; /* Añade esta línea */
+    left: 0; 
+    transition: left 0.3s ease; 
   }
 
   ul {
@@ -137,13 +136,22 @@
   }
 
   li {
-    margin-bottom: 15px;
+    margin-top: 70px;
   }
 
   a {
     text-decoration: none;
-    color: white;
-    font-size: 16px;
+    color: goldenrod;
+    font-size: 25px;
     cursor: pointer;
   }
-</style>
+
+  .mail {
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+
+
+  </style>

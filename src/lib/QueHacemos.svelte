@@ -31,6 +31,7 @@
 
 <style>
   main {
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 60px;
     text-align: justify;
   }

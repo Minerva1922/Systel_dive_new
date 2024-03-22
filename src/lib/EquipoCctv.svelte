@@ -7,20 +7,24 @@
   <h1>CCTV FULL HD</h1>
   <p>Cctv Equipo video de buceo 2, 3 o 4 buzos. <br>Equipo robusto, compacto y de fácil manejo.<br> Pensado y diseñado por buceadores que conocen las necesidades y las complicaciones del buceo comercial.</p>
 
-  <!-- Imagen de la maleta con características -->
-  <div class="maleta-container">
-    <img src={maleta} alt="maleta" class="maleta" title="Características principales:
-    - Transmisión de larga distancia
-    - Sistema operativo potente
-    - Mejora de visión en agua sucia
-    - Dual Cam
-    - Dual monitor
-    - Compatibilidad y adaptabilidad
-    - Opciones de alimentación flexibles
-    - Opcional batería interna de emergencia
-    - Tamaño personalizable" />
+  <!-- Contenedor para la maleta y las características -->
+  <div class="maleta-caracteristicas-container">
+    <!-- Imagen de la maleta con características -->
+    <div class="maleta-container">
+      <img src={maleta} alt="maleta" class="maleta" title="Características:
+      - Transmisión de larga distancia
+      - Sistema operativo potente
+      - Mejora de visión en agua sucia
+      - Dual Cam
+      - Dual monitor
+      - Compatibilidad y adaptabilidad
+      - Opciones de alimentación flexibles
+      - Opcional batería interna de emergencia
+      - Tamaño personalizable" />
+    </div>
+
+    <!-- Características -->
     <div class="caracteristicas">
-      <h2>Características</h2>
       <ul>
         <li><strong>Transmisión de larga distancia:</strong> Capacidad de transmitir datos hasta una profundidad de 1000 metros, lo que permite a los buceadores explorar áreas remotas sin perder la conexión.</li>
         <li><strong>Sistema operativo potente:</strong> Equipado con un sistema operativo potente que permite gestionar cámaras de hasta 8 megapíxeles, ofreciendo una calidad superior de imagen y un zoom sin pixelar la imagen. Además, el sistema mejora digitalmente la imagen para obtener resultados óptimos incluso en condiciones de visibilidad reducida o agua sucia.</li>
@@ -35,17 +39,18 @@
     </div>
   </div>
 
-  <h2>Con estas características innovadoras, este sistema tecnológico ofrece una solución integral para mejorar la experiencia de buceo, <br>permitiendo a los usuarios capturar imágenes de alta calidad, transmitir datos de manera eficiente y disfrutar de una visualización clara y nítida bajo el agua.</h2>
+  <h3>Con estas características innovadoras, este sistema tecnológico ofrece una solución integral para mejorar la experiencia de buceo, <br>permitiendo a los usuarios capturar imágenes de alta calidad, transmitir datos de manera eficiente y disfrutar de una visualización clara y nítida bajo el agua.</h3>
 </main>
 
 <style>
   main {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 60px;
     text-align-last: auto;
   }
 
   h1 {
+    margin-left: 380px;
     font-size: 24px;
     color: #FFFBFB; 
   }
@@ -56,10 +61,12 @@
   }
 
   h3 {
-    color:rgb(3, 14, 105)
+    text-align: center;
+    color: goldenrod;
   }
 
   p {
+    margin-left: 380px;
     font-size: 16px;
     line-height: 1.6;
     color: #FFFFFF; 
@@ -67,16 +74,27 @@
   }
 
   /* Estilos para la maleta */
-  .maleta-container {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px; /* Espacio entre la descripción y la imagen */
+  .maleta-caracteristicas-container {
+    display: flex;
+    align-items: flex-start;
   }
 
   .maleta {
     width: 350px; /* Ajusta el tamaño según sea necesario */
     height: auto;
     cursor: pointer;
+  }
+
+
+  .maleta-container {
+    margin-right: 20px; /* Espacio entre la maleta y las características */
+  }
+
+  .caracteristicas {
+    flex-grow: 1; /* Para que las características ocupen todo el espacio disponible */
+    color: white;
+    font-size: 16px;
+    padding: 10px;
   }
 
   .maleta:hover::after {
@@ -94,25 +112,24 @@
     white-space: pre-line; /* Permite mostrar saltos de línea */
   }
 
-  /* .caracteristicas {
-    display: none; /* Oculta inicialmente las características */
-    /* position: absolute;
-    top: calc(100% + 10px); /* Posiciona las características debajo de la imagen */
-    /* left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 10px; */ 
-    /* white-space: pre-line; /* Permite mostrar saltos de línea */
-  
-
-  .maleta-container:hover .caracteristicas {
-    display: block; /* Muestra las características al pasar el ratón sobre la maleta */
-  }
 
   ul {
     list-style-type: none;
+  }
+
+  strong{
+    font-size: 20px;
+    color: goldenrod;
+  }
+
+  @media (max-width: 768px) {
+    .maleta-caracteristicas-container {
+      flex-direction: column; /* Cambia a columna en dispositivos móviles */
+    }
+
+    .maleta-container {
+      margin-right: 0; /* Elimina el margen entre la maleta y las características en dispositivos móviles */
+      margin-bottom: 20px; /* Espacio entre la maleta y las características en dispositivos móviles */
+    }
   }
 </style>
