@@ -1,4 +1,4 @@
-<script>
+script>
   import maleta from '../assets/img_maleta.png'
 </script>
 
@@ -47,6 +47,7 @@
     background-color: rgba(0, 0, 0, 0.7);
     padding: 60px;
     text-align-last: auto;
+    overflow-y: auto; /* Habilita el scroll vertical */
   }
 
   h1 {
@@ -85,7 +86,6 @@
     cursor: pointer;
   }
 
-
   .maleta-container {
     margin-right: 20px; /* Espacio entre la maleta y las características */
   }
@@ -117,8 +117,8 @@
     list-style-type: none;
   }
 
-  strong{
-    font-size: 20px;
+  strong {
+    font-size: 18px;
     color: goldenrod;
   }
 
