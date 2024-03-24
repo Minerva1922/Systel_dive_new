@@ -1,4 +1,4 @@
-script>
+<script>
   import maleta from '../assets/img_maleta.png'
 </script>
 

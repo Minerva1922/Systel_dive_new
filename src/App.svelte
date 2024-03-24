@@ -9,7 +9,7 @@
   import QueHacemos from './lib/QueHacemos.svelte';
   import Camaras from './lib/Camaras.svelte';
   import EquipoCctv from './lib/EquipoCctv.svelte';
-  import Mail from './assets/email.ico'
+  import Mail from './assets/mail.ico'
 
   let showMenu = false;
   let currentRoute = '';
