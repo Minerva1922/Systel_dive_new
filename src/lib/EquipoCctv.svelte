@@ -1,5 +1,5 @@
 <script>
-  import maleta from '../assets/img_maleta.png'
+  import maleta from '../assets/img_maleta.png';
 </script>
 
 <main>
@@ -44,11 +44,13 @@
 
 <style>
   main {
+    position: relative;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 60px;
     text-align-last: auto;
     overflow-y: auto; /* Habilita el scroll vertical */
   }
+  
 
   h1 {
     margin-left: 380px;
@@ -56,12 +58,8 @@
     color: #FFFBFB; 
   }
 
-  h2 {
-    align-items: center;
-    color: #FFFBFB;
-  }
-
   h3 {
+    margin-top: 50px;
     text-align: center;
     color: goldenrod;
   }
@@ -114,6 +112,7 @@
 
 
   ul {
+    margin-top: 20px;
     list-style-type: none;
   }
 

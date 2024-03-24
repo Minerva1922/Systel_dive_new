@@ -76,7 +76,12 @@
 </main>
 
 <style>
-  main {
+   
+   main {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 60px;
+    text-align-last: auto;
+    overflow-y: auto; /* Habilita el scroll vertical */
     background-size: cover;
     height: 100vh;
     position: relative;
