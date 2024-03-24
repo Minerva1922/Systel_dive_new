@@ -12,6 +12,7 @@
   import Mail from './assets/mail.ico'
 
   let showMenu = false;
+  let showContactInfo = false;
   let currentRoute = '';
 
   // Definir las rutas y sus componentes asociados
@@ -27,6 +28,11 @@
     showMenu = !showMenu;
   }
 
+  // Función para alternar la visibilidad de los datos de contacto
+  function toggleContactInfo() {
+    showContactInfo = !showContactInfo;
+  }
+
   // Función para manejar la navegación
   function navigate(route) {
     currentRoute = route;
@@ -38,7 +44,8 @@
     navigate(initialRoute); // Navegar a la ruta inicial
   });
 
-  </script>
+</script>
+
 <main style="background-image: url('{fondo}')">
   <!-- Encabezado -->
   <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -60,10 +67,17 @@
             <li><a href="{route}" on:click={() => navigate(route)}>{route}</a></li>
           {/each}
         </ul>
-        <!-- Agrega el icono de correo -->
-        <img src={Mail} alt="Correo" class="mail" />
-
+        <img src={Mail} alt="Correo" class="mail" on:click={toggleContactInfo} />
       </div>
+    </div>
+  {/if}
+ 
+  <!-- Datos de contacto -->
+  {#if showContactInfo}
+    <div class="contact-info">
+      <!-- Agrega aquí tus datos de contacto -->
+      <p>Correo electrónico: Systeldive@correo.com</p>
+      <p>Teléfono: 123-456-789</p>
     </div>
   {/if}
 
@@ -155,8 +169,18 @@
     margin-top: 20px;
     width: 50px;
     height: 50px;
+    cursor: pointer;
   }
-  
 
-
-  </style>
+  .contact-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    z-index: 1;
+  }
+</style>
